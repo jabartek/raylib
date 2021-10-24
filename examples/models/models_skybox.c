@@ -166,7 +166,7 @@ int main(void)
 
     UnloadModel(skybox);        // Unload skybox model
 
-    CloseWindow();              // Close window and OpenGL context
+    RLCloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

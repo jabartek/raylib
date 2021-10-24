@@ -157,7 +157,7 @@ int main(int argc, char **argv)
     //--------------------------------------------------------------------------------------
     UnloadTexture(texPattern);        // Unload texture
 
-    CloseWindow();              // Close window and OpenGL context
+    RLCloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

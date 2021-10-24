@@ -609,8 +609,8 @@ Function 002: WindowShouldClose() (0 input parameters)
   Return type: bool
   Description: Check if KEY_ESCAPE pressed or Close icon pressed
   No input parameters
-Function 003: CloseWindow() (0 input parameters)
-  Name: CloseWindow
+Function 003: RLCloseWindow() (0 input parameters)
+  Name: RLCloseWindow
   Return type: void
   Description: Close window and unload OpenGL context
   No input parameters
@@ -797,8 +797,8 @@ Function 039: GetClipboardText() (0 input parameters)
   Return type: const char *
   Description: Get clipboard text content
   No input parameters
-Function 040: ShowCursor() (0 input parameters)
-  Name: ShowCursor
+Function 040: RLShowCursor() (0 input parameters)
+  Name: RLShowCursor
   Return type: void
   Description: Shows cursor
   No input parameters

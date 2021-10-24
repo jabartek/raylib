@@ -98,7 +98,7 @@ int main(void)
     // Fonts unloading
     for (int i = 0; i < MAX_FONTS; i++) UnloadFont(fonts[i]);
 
-    CloseWindow();                 // Close window and OpenGL context
+    RLCloseWindow();                 // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

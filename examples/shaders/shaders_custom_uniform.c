@@ -120,7 +120,7 @@ int main(void)
     UnloadModel(model);                 // Unload model
     UnloadRenderTexture(target);        // Unload render texture
 
-    CloseWindow();                      // Close window and OpenGL context
+    RLCloseWindow();                      // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

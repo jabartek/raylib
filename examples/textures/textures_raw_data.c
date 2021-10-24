@@ -92,7 +92,7 @@ int main(void)
     UnloadTexture(fudesumi);    // Texture unloading
     UnloadTexture(checked);     // Texture unloading
 
-    CloseWindow();              // Close window and OpenGL context
+    RLCloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

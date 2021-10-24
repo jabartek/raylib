@@ -1,3 +1,8 @@
+# This is not original raylib source
+
+This repository contains raylib source [@affb707](https://github.com/raysan5/raylib/commit/affb707dd939b7c9c6c873beb05a7baf17a8c7bd), but with functions CloseWindow and ShowCursor renamed to RLCloseWindow and RLShowCursor respectively. This is due to function name collision when linking project agains Windows APIs.
+
+
 <img align="left" src="https://github.com/raysan5/raylib/blob/master/logo/raylib_logo_animation.gif" width="288px">
 
 **raylib is a simple and easy-to-use library to enjoy videogames programming.**

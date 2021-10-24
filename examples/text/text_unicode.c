@@ -299,7 +299,7 @@ int main(int argc, char **argv)
     UnloadFont(fontAsian);      // Unload font resource
     UnloadFont(fontEmoji);      // Unload font resource
 
-    CloseWindow();              // Close window and OpenGL context
+    RLCloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

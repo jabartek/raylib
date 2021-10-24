@@ -2502,7 +2502,7 @@
       "returnType": "bool"
     },
     {
-      "name": "CloseWindow",
+      "name": "RLCloseWindow",
       "description": "Close window and unload OpenGL context",
       "returnType": "void"
     },
@@ -2741,7 +2741,7 @@
       "returnType": "const char *"
     },
     {
-      "name": "ShowCursor",
+      "name": "RLShowCursor",
       "description": "Shows cursor",
       "returnType": "void"
     },

@@ -45,7 +45,7 @@
                 <Param name="const char *title" />
             </Overload>
         </KeyWord>
-        <KeyWord name="CloseWindow" func="yes">
+        <KeyWord name="RLCloseWindow" func="yes">
             <Overload retVal="void" descr="Close window and unload OpenGL context"></Overload>
         </KeyWord>
         <KeyWord name="IsWindowReady" func="yes">
@@ -101,7 +101,7 @@
         </KeyWord>
 
         <!-- Cursor-related functions -->
-        <KeyWord name="ShowCursor" func="yes">
+        <KeyWord name="RLShowCursor" func="yes">
             <Overload retVal="void" descr="Shows cursor"></Overload>
         </KeyWord>
         <KeyWord name="HideCursor" func="yes">

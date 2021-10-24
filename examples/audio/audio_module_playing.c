@@ -139,7 +139,7 @@ int main(void)
 
     CloseAudioDevice();     // Close audio device (music streaming is automatically stopped)
 
-    CloseWindow();          // Close window and OpenGL context
+    RLCloseWindow();          // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

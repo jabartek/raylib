@@ -90,7 +90,7 @@ int main(void)
     UnloadTexture(texture);
     UnloadShader(shdrOutline);
 
-    CloseWindow();        // Close window and OpenGL context
+    RLCloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

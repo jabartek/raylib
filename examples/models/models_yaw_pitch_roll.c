@@ -110,7 +110,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
     UnloadModel(model);     // Unload model data
 
-    CloseWindow();          // Close window and OpenGL context
+    RLCloseWindow();          // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

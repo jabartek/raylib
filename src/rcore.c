@@ -856,7 +856,7 @@ void InitWindow(int width, int height, const char *title)
 }
 
 // Close window and unload OpenGL context
-void CloseWindow(void)
+void RLCloseWindow(void)
 {
 #if defined(SUPPORT_GIF_RECORDING)
     if (gifRecording)
@@ -1840,7 +1840,7 @@ void SetClipboardText(const char *text)
 }
 
 // Show mouse cursor
-void ShowCursor(void)
+void RLShowCursor(void)
 {
 #if defined(PLATFORM_DESKTOP)
     glfwSetInputMode(CORE.Window.handle, GLFW_CURSOR, GLFW_CURSOR_NORMAL);

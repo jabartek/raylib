@@ -160,7 +160,7 @@ int main(void)
     UnloadAudioStream(stream);   // Close raw audio stream and delete buffers from RAM
     CloseAudioDevice();         // Close audio device (music streaming is automatically stopped)
 
-    CloseWindow();              // Close window and OpenGL context
+    RLCloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

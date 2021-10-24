@@ -69,7 +69,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
     ClearDroppedFiles();    // Clear internal buffers
 
-    CloseWindow();          // Close window and OpenGL context
+    RLCloseWindow();          // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

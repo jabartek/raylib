@@ -172,7 +172,7 @@ int main(void)
     // Unload models data (GPU VRAM)
     for (int i = 0; i < NUM_MODELS; i++) UnloadModel(models[i]);
 
-    CloseWindow();          // Close window and OpenGL context
+    RLCloseWindow();          // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

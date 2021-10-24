@@ -184,7 +184,7 @@ int main(void)
     UnloadShader(shader);               // Unload shader
     UnloadRenderTexture(target);        // Unload render texture
 
-    CloseWindow();                      // Close window and OpenGL context
+    RLCloseWindow();                      // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

@@ -34,6 +34,6 @@ int main() {
         EndDrawing();
     }
     
-    CloseWindow();
+    RLCloseWindow();
     return 0;
 }

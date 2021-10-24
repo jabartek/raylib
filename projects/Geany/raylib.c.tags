@@ -1,7 +1,7 @@
 # format=pipe 
 InitWindow|void|(int width, int height, const char *title);|
 WindowShouldClose|bool|(void);|
-CloseWindow|void|(void);|
+RLCloseWindow|void|(void);|
 IsWindowReady|bool|(void);|
 IsWindowMinimized|bool|(void);|
 IsWindowResized|bool|(void);|
@@ -26,7 +26,7 @@ GetMonitorPhysicalHeight|int|(int monitor);|
 GetMonitorName|const char *|(int monitor);|
 GetClipboardText|const char *|(void);|
 SetClipboardText|void|(const char *text);|
-ShowCursor|void|(void);|
+RLShowCursor|void|(void);|
 HideCursor|void|(void);|
 IsCursorHidden|bool|(void);|
 EnableCursor|void|(void);|

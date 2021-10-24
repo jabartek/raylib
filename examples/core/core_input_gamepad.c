@@ -188,7 +188,7 @@ int main(void)
     UnloadTexture(texPs3Pad);
     UnloadTexture(texXboxPad);
 
-    CloseWindow();        // Close window and OpenGL context
+    RLCloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

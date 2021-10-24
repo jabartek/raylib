@@ -115,7 +115,7 @@ int main(void)
     UnloadTexture(texture);         // Unload map texture
     UnloadModel(model);             // Unload map model
 
-    CloseWindow();                  // Close window and OpenGL context
+    RLCloseWindow();                  // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

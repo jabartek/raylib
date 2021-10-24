@@ -93,7 +93,7 @@ int main(void)
 
     // TODO: Unload all loaded resources at this point
 
-    CloseWindow();        // Close window and OpenGL context
+    RLCloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

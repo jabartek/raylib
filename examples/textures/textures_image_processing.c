@@ -162,7 +162,7 @@ int main(void)
     UnloadImage(imOrigin);        // Unload image-origin from RAM
     UnloadImage(imCopy);          // Unload image-copy from RAM
 
-    CloseWindow();                // Close window and OpenGL context
+    RLCloseWindow();                // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

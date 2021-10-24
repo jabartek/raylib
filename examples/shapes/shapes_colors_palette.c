@@ -92,7 +92,7 @@ int main(void)
 
     // De-Initialization
     //--------------------------------------------------------------------------------------
-    CloseWindow();                // Close window and OpenGL context
+    RLCloseWindow();                // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;
