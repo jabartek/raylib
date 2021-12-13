@@ -318,6 +318,10 @@
     #define MAX_DECOMPRESSION_SIZE        64        // Maximum size allocated for decompression in MB
 #endif
 
+#ifndef DOM_CANVAS_ID
+    #define DOM_CANVAS_ID                 "#canvas"        // Maximum size allocated for decompression in MB
+#endif
+
 // Flags operation macros
 #define FLAG_SET(n, f) ((n) |= (f))
 #define FLAG_CLEAR(n, f) ((n) &= ~(f))
@@ -827,17 +831,17 @@ void InitWindow(int width, int height, const char *title)
     // Trigger this once to get initial window sizing
     EmscriptenResizeCallback(EMSCRIPTEN_EVENT_RESIZE, NULL, NULL);
     // Support keyboard events
-    //emscripten_set_keypress_callback("#canvas", NULL, 1, EmscriptenKeyboardCallback);
-    //emscripten_set_keydown_callback("#canvas", NULL, 1, EmscriptenKeyboardCallback);
+    //emscripten_set_keypress_callback(DOM_CANVAS_ID, NULL, 1, EmscriptenKeyboardCallback);
+    //emscripten_set_keydown_callback(DOM_CANVAS_ID, NULL, 1, EmscriptenKeyboardCallback);
 
     // Support mouse events
-    emscripten_set_click_callback("#canvas", NULL, 1, EmscriptenMouseCallback);
+    emscripten_set_click_callback(DOM_CANVAS_ID, NULL, 1, EmscriptenMouseCallback);
 
     // Support touch events
-    emscripten_set_touchstart_callback("#canvas", NULL, 1, EmscriptenTouchCallback);
-    emscripten_set_touchend_callback("#canvas", NULL, 1, EmscriptenTouchCallback);
-    emscripten_set_touchmove_callback("#canvas", NULL, 1, EmscriptenTouchCallback);
-    emscripten_set_touchcancel_callback("#canvas", NULL, 1, EmscriptenTouchCallback);
+    emscripten_set_touchstart_callback(DOM_CANVAS_ID, NULL, 1, EmscriptenTouchCallback);
+    emscripten_set_touchend_callback(DOM_CANVAS_ID, NULL, 1, EmscriptenTouchCallback);
+    emscripten_set_touchmove_callback(DOM_CANVAS_ID, NULL, 1, EmscriptenTouchCallback);
+    emscripten_set_touchcancel_callback(DOM_CANVAS_ID, NULL, 1, EmscriptenTouchCallback);
 
     // Support gamepad events (not provided by GLFW3 on emscripten)
     emscripten_set_gamepadconnected_callback(NULL, 1, EmscriptenGamepadCallback);
@@ -1167,7 +1171,7 @@ void ToggleFullscreen(void)
     {
         // Option 1: Request fullscreen for the canvas element
         // This option does not seem to work at all
-        //emscripten_request_fullscreen("#canvas", false);
+        //emscripten_request_fullscreen(DOM_CANVAS_ID, false);
 
         // Option 2: Request fullscreen for the canvas element with strategy
         // This option does not seem to work at all
@@ -1179,7 +1183,7 @@ void ToggleFullscreen(void)
             // .canvasResizedCallback = EmscriptenWindowResizedCallback,
             // .canvasResizedCallbackUserData = NULL
         // };
-        //emscripten_request_fullscreen_strategy("#canvas", EM_FALSE, &strategy);
+        //emscripten_request_fullscreen_strategy(DOM_CANVAS_ID, EM_FALSE, &strategy);
 
         // Option 3: Request fullscreen for the canvas element with strategy
         // It works as expected but only inside the browser (client area)
@@ -1190,10 +1194,10 @@ void ToggleFullscreen(void)
             .canvasResizedCallback = EmscriptenWindowResizedCallback,
             .canvasResizedCallbackUserData = NULL
         };
-        emscripten_enter_soft_fullscreen("#canvas", &strategy);
+        emscripten_enter_soft_fullscreen(DOM_CANVAS_ID, &strategy);
 
         int width, height;
-        emscripten_get_canvas_element_size("#canvas", &width, &height);
+        emscripten_get_canvas_element_size(DOM_CANVAS_ID, &width, &height);
         TRACELOG(LOG_WARNING, "Emscripten: Enter fullscreen: Canvas size: %i x %i", width, height);
     }
     else
@@ -1202,7 +1206,7 @@ void ToggleFullscreen(void)
         emscripten_exit_soft_fullscreen();
 
         int width, height;
-        emscripten_get_canvas_element_size("#canvas", &width, &height);
+        emscripten_get_canvas_element_size(DOM_CANVAS_ID, &width, &height);
         TRACELOG(LOG_WARNING, "Emscripten: Exit fullscreen: Canvas size: %i x %i", width, height);
     }
 */
@@ -1885,7 +1889,7 @@ void DisableCursor(void)
     glfwSetInputMode(CORE.Window.handle, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 #endif
 #if defined(PLATFORM_WEB)
-    emscripten_request_pointerlock("#canvas", 1);
+    emscripten_request_pointerlock(DOM_CANVAS_ID, 1);
 #endif
 
     CORE.Input.Mouse.cursorHidden = true;
@@ -4978,7 +4982,7 @@ static EM_BOOL EmscriptenResizeCallback(int eventType, const EmscriptenUiEvent *
     // so the size of the canvas object is explicitly retrieved below
     int width = GetCanvasWidth();
     int height = GetCanvasHeight();
-    emscripten_set_canvas_element_size("#canvas",width,height);
+    emscripten_set_canvas_element_size(DOM_CANVAS_ID,width,height);
 
     SetupViewport(width, height);    // Reset viewport and projection matrix for new size
 
@@ -5508,8 +5512,8 @@ static EM_BOOL EmscriptenTouchCallback(int eventType, const EmscriptenTouchEvent
     double canvasHeight = 0.0;
     // NOTE: emscripten_get_canvas_element_size() returns canvas.width and canvas.height but
     // we are looking for actual CSS size: canvas.style.width and canvas.style.height
-    //EMSCRIPTEN_RESULT res = emscripten_get_canvas_element_size("#canvas", &canvasWidth, &canvasHeight);
-    emscripten_get_element_css_size("#canvas", &canvasWidth, &canvasHeight);
+    //EMSCRIPTEN_RESULT res = emscripten_get_canvas_element_size(DOM_CANVAS_ID, &canvasWidth, &canvasHeight);
+    emscripten_get_element_css_size(DOM_CANVAS_ID, &canvasWidth, &canvasHeight);
 
     for (int i = 0; (i < CORE.Input.Touch.pointCount) && (i < MAX_TOUCH_POINTS); i++)
     {
