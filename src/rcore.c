@@ -321,7 +321,7 @@
 #ifdef DOM_CANVAS_ID
     #define DOM_CANVAS_ID_FULL            "#" DOM_CANVAS_ID
 #else
-    #define DOM_CANVAS_ID_FULL            "#canvas"
+    #define DOM_CANVAS_ID_FULL            "#paczki_view"
 #endif
 
 // Flags operation macros
@@ -4972,8 +4972,8 @@ static void ErrorCallback(int error, const char *description)
 }
 
 #if defined(PLATFORM_WEB)
-EM_JS(int, GetCanvasWidth, (), { return canvas.clientWidth; });
-EM_JS(int, GetCanvasHeight, (), { return canvas.clientHeight; });
+EM_JS(int, GetCanvasWidth, (), { return 800; });
+EM_JS(int, GetCanvasHeight, (), { return 450; });
 
 static EM_BOOL EmscriptenResizeCallback(int eventType, const EmscriptenUiEvent *e, void *userData)
 {
