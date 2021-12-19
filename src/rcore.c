@@ -318,10 +318,14 @@
     #define MAX_DECOMPRESSION_SIZE        64        // Maximum size allocated for decompression in MB
 #endif
 
+// Customizable canvas DOM ID
+#define STRINGIFY2(X) #X
+#define STRINGIFY(X) STRINGIFY2(X)
+
 #ifdef DOM_CANVAS_ID
-    #define DOM_CANVAS_ID_FULL            "#" DOM_CANVAS_ID
+    #define DOM_CANVAS_ID_FULL            "#" STRINGIFY(DOM_CANVAS_ID)
 #else
-    #define DOM_CANVAS_ID_FULL            "#paczki_view"
+    #define DOM_CANVAS_ID_FULL            "#canvas"
 #endif
 
 // Flags operation macros
