@@ -318,11 +318,15 @@
     #define MAX_DECOMPRESSION_SIZE        64        // Maximum size allocated for decompression in MB
 #endif
 
+#ifdef DOM_CANVAS_ID_EXTERNAL
+extern const char* DOM_CANVAS_ID_FULL;
+#else
 #ifdef DOM_CANVAS_ID
     #define DOM_CANVAS_ID_FULL            "#" DOM_CANVAS_ID
 #else
     #define DOM_CANVAS_ID_FULL            "#canvas"
-#endif
+#endif // DOM_CANVAS_ID
+#endif // DOM_CANVAS_ID_EXTERNAL
 
 // Flags operation macros
 #define FLAG_SET(n, f) ((n) |= (f))
@@ -4972,8 +4976,8 @@ static void ErrorCallback(int error, const char *description)
 }
 
 #if defined(PLATFORM_WEB)
-EM_JS(int, GetCanvasWidth, (), { return canvas.clientWidth; });
-EM_JS(int, GetCanvasHeight, (), { return canvas.clientHeight; });
+EM_JS(int, GetCanvasWidth, (), { return Module["canvas"].clientWidth; });
+EM_JS(int, GetCanvasHeight, (), { return Module["canvas"].clientHeight; });
 
 static EM_BOOL EmscriptenResizeCallback(int eventType, const EmscriptenUiEvent *e, void *userData)
 {
